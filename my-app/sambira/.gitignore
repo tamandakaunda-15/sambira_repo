@@ -3,7 +3,8 @@ logs
 *.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
+yarn-error.log*git remote set-url origin https://github.com/tamandakaunda-15/<your-repo-name>.git
+
 pnpm-debug.log*
 lerna-debug.log*
 
