@@ -7,10 +7,15 @@ Sambira Educational Web Application is a low-bandwidth platform designed to brid
 Key Features
 User Authentication: Secure login and registration system.
 Learner Dashboard: Track learning progress, manage assignments (mark as Complete or Incomplete).
+
 Course Modules: Access career development resources like soft skills training, resume-building, and entrepreneurship guides.
+
 Mentorship Booking: Connect with mentors or industry professionals for personalized guidance.
+
 Community Forum: Discuss career challenges and share knowledge with peers and mentors.
+
 Profile Management: Users can update their personal details and preferences.
+
 Low-Bandwidth Optimization: The app is designed to work smoothly on 2G and 3G networks.
 
 
@@ -51,23 +56,6 @@ This will start the app at http://localhost:5173 (the port specified by Vite).
 
 4. Accessing the Application
 Open your browser and navigate to http://localhost:5173 to see the app running locally.
-
-
-Folder Structure
-plaintext
-Sambira-Educational-App/Sambira
-├── public/              # Static files (images, icons, etc.)
-│   ├── index.html       # Main HTML template
-├── src/                 # Main source code
-│   ├── assets/          # Static assets (e.g., images, icons)
-│   ├── components/      # Reusable UI components
-│   ├── pages/           # React components for different pages (e.g., Dashboard, Profile)
-│   ├── App.jsx          # Main app component
-│   ├── index.js         # Entry point for the React app
-│   └── styles/          # CSS and styling files
-├── .gitignore           # Git ignore file
-├── package.json         # Project metadata and dependencies
-└── vite.config.js       # Vite configuration file
 
 
 Features and Functionality
