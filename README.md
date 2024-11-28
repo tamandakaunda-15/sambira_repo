@@ -4,6 +4,7 @@ Project Overview
 Sambira Educational Web Application is a low-bandwidth platform designed to bridge the educational gap in rural Malawi. The app offers career readiness tools, mentorship, soft skills training, and a community forum. It's optimized to work in low-internet environments and is built with React and Vite to ensure fast development and quick loading times.
 
 
+
 Key Features
 User Authentication: Secure login and registration system.
 
@@ -18,6 +19,7 @@ Community Forum: Discuss career challenges and share knowledge with peers and me
 Profile Management: Users can update their personal details and preferences.
 
 Low-Bandwidth Optimization: The app is designed to work smoothly on 2G and 3G networks.
+
 
 
 Technology Stack
@@ -76,6 +78,7 @@ Users can book one-on-one mentorship sessions with facilitators and industry pro
 A discussion board for users to share ideas, ask questions, and get guidance from mentors and peers.
 
 
+
 Deployment
 Vercel Deployment
 Sign up for Vercel at Vercel.com.
@@ -99,7 +102,9 @@ Click Deploy and get a live URL.
 
 
 Environment Variables
+
 For your app to work with different environments, you may need to set up the following environment variables in your .env file (add any other environment-specific variables):
+
 VITE_API_URL=https://your-api-url.com
 VITE_SECRET_KEY=your-secret-key
 
@@ -122,6 +127,7 @@ Open a pull request to the main repository.
 
 License
 This project is licensed under the MIT License.
+
 
 
 Contact
