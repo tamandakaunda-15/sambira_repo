@@ -1,6 +1,8 @@
 Sambira Educational Web Application
+
 Project Overview
 Sambira Educational Web Application is a low-bandwidth platform designed to bridge the educational gap in rural Malawi. The app offers career readiness tools, mentorship, soft skills training, and a community forum. It's optimized to work in low-internet environments and is built with React and Vite to ensure fast development and quick loading times.
+
 
 Key Features
 User Authentication: Secure login and registration system.
@@ -10,45 +12,50 @@ Mentorship Booking: Connect with mentors or industry professionals for personali
 Community Forum: Discuss career challenges and share knowledge with peers and mentors.
 Profile Management: Users can update their personal details and preferences.
 Low-Bandwidth Optimization: The app is designed to work smoothly on 2G and 3G networks.
+
+
 Technology Stack
 Frontend: React.js, Vite
-Backend: (Optional, if backend exists, add Node.js/Express here)
-Database: (Optional, add MongoDB or another database if applicable)
-Deployment: Vercel, Netlify, or other hosting solutions (adjust if needed)
-Authentication: JWT, OAuth (if applicable)
+Backend:  Node.js/Express 
+Database: MongoDB
+Deployment: Vercel
+Authentication: JWT
+
+
 Installation and Setup
+
 Prerequisites
 Ensure the following are installed on your machine:
-
 Node.js (v14 or above)
 Git
 Vite (used for quick project setup)
+
+
+
 1. Clone the Repository
 bash
 Copy code
 git clone https://github.com/your-username/sambira_repo.git
 cd sambira_repo
-2. Install Dependencies
-Install the required dependencies for the project:
 
-bash
-Copy code
+3. Install Dependencies
+Install the required dependencies for the project:
 npm install
+
+
 3. Start the Development Server
 Once the dependencies are installed, you can start the development server:
-
-bash
-Copy code
 npm run dev
 This will start the app at http://localhost:5173 (the port specified by Vite).
+
 
 4. Accessing the Application
 Open your browser and navigate to http://localhost:5173 to see the app running locally.
 
+
 Folder Structure
 plaintext
-Copy code
-Sambira-Educational-App/
+Sambira-Educational-App/Sambira
 ├── public/              # Static files (images, icons, etc.)
 │   ├── index.html       # Main HTML template
 ├── src/                 # Main source code
@@ -61,17 +68,24 @@ Sambira-Educational-App/
 ├── .gitignore           # Git ignore file
 ├── package.json         # Project metadata and dependencies
 └── vite.config.js       # Vite configuration file
+
+
 Features and Functionality
 1. User Authentication
 Users can sign up or log in to access their personalized dashboard.
 Passwords are securely stored and managed.
-2. Learner Dashboard
+
+
+3. Learner Dashboard
 Track progress through courses and training modules.
 Mark assignments as "complete" or "incomplete".
-3. Mentorship Booking
+
+5. Mentorship Booking
 Users can book one-on-one mentorship sessions with facilitators and industry professionals.
-4. Community Forum
+
+7. Community Forum
 A discussion board for users to share ideas, ask questions, and get guidance from mentors and peers.
+
 Deployment
 Vercel Deployment
 Sign up for Vercel at Vercel.com.
@@ -87,15 +101,13 @@ Environment Variables
 For your app to work with different environments, you may need to set up the following environment variables in your .env file (add any other environment-specific variables):
 
 plaintext
-Copy code
 VITE_API_URL=https://your-api-url.com
 VITE_SECRET_KEY=your-secret-key
 Testing
 To run tests for your React app (if using testing frameworks like Jest or React Testing Library):
-
-bash
-Copy code
 npm test
+
+
 Contributing
 Fork the repository.
 Create a new branch (git checkout -b feature-name).
@@ -103,11 +115,14 @@ Make your changes.
 Commit your changes (git commit -m 'Added new feature').
 Push to the branch (git push origin feature-name).
 Open a pull request to the main repository.
+
+
+
 License
 This project is licensed under the MIT License.
 
+
 Contact
 For any issues, questions, or feedback, feel free to reach out to:
-
 Email: tamandakaunda900@gmail.com
 GitHub: tamandakauunda-15
