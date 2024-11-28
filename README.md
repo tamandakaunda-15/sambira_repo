@@ -6,6 +6,7 @@ Sambira Educational Web Application is a low-bandwidth platform designed to brid
 
 Key Features
 User Authentication: Secure login and registration system.
+
 Learner Dashboard: Track learning progress, manage assignments (mark as Complete or Incomplete).
 
 Course Modules: Access career development resources like soft skills training, resume-building, and entrepreneurship guides.
@@ -74,23 +75,36 @@ Users can book one-on-one mentorship sessions with facilitators and industry pro
 7. Community Forum
 A discussion board for users to share ideas, ask questions, and get guidance from mentors and peers.
 
+
 Deployment
 Vercel Deployment
 Sign up for Vercel at Vercel.com.
+
 Link your GitHub repository to Vercel.
+
 Select the branch you want to deploy (usually main).
+
 Deploy the app and get a public URL.
+
 Netlify Deployment (Alternative)
+
 Sign up for Netlify at Netlify.com.
+
 Link your GitHub repository to Netlify.
+
 Select the main branch to deploy.
+
 Click Deploy and get a live URL.
+
+
+
 Environment Variables
 For your app to work with different environments, you may need to set up the following environment variables in your .env file (add any other environment-specific variables):
-
-plaintext
 VITE_API_URL=https://your-api-url.com
 VITE_SECRET_KEY=your-secret-key
+
+
+
 Testing
 To run tests for your React app (if using testing frameworks like Jest or React Testing Library):
 npm test
