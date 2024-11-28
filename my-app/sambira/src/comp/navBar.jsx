@@ -55,7 +55,7 @@ const Navbar = () => {
             Contact
           </a>
           <a href="/courses" className="block py-2 px-4 lg:inline-block hover:bg-blue-700">
-            Couurses
+            Courses
           </a>
         </div>
       </div>

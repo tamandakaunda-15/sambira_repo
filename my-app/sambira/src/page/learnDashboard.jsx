@@ -29,9 +29,9 @@ const SambiraDashboard = () => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('dashboard');
   const [user, setUser] = useState({
-    name: 'Alex Johnson',
-    email: 'alex.johnson@sambira.com',
-    avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
+    name: 'Tamanda Kaunda',
+    email: 'tamanda@sambira.com',
+    avatar: 'https://www.dropbox.com/scl/fi/rrg7h7ogr0kebev0004fa/Purple-and-Green-Simple-Woman-Instagram-Profile-Picture-4.png?rlkey=6ec9uz4z6qxqpa1o50iczfr80&st=uwz5v1jb&dl=0',
     learningPath: 'Full Stack Web Development'
   });
 
