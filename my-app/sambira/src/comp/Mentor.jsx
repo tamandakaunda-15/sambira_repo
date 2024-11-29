@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { User, MessageCircle, Calendar } from 'lucide-react'; // Lucide icons
+import React, { useState } from "react";
+import { User, MessageCircle, Calendar } from "lucide-react"; // Lucide icons
 
 const mentors = [
   { id: 1, name: "John Doe", expertise: "Digital Marketing", availability: "Mon, Wed, Fri", sessions: 10 },
@@ -11,42 +11,56 @@ const mentors = [
 const FindMentors = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedMentor, setSelectedMentor] = useState(null);
-  const [bookingDetails, setBookingDetails] = useState({
-    date: "",
-    time: "",
-    reason: "",
-  });
+  const [bookingDetails, setBookingDetails] = useState({ date: "", time: "", reason: "" });
+  const [savedSessions, setSavedSessions] = useState([]);
+  const [message, setMessage] = useState("");
+  const [isMessageModalOpen, setIsMessageModalOpen] = useState(false);
 
-  // Handle opening the modal and setting the selected mentor
+  // Handle opening the session booking modal
   const handleBookSession = (mentor) => {
     setSelectedMentor(mentor);
     setIsModalOpen(true);
   };
 
-  // Handle closing the modal
+  // Handle opening the message modal
+  const handleMessageMentor = (mentor) => {
+    setSelectedMentor(mentor);
+    setIsMessageModalOpen(true);
+  };
+
+  // Handle closing the modals
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setBookingDetails({ date: "", time: "", reason: "" }); // Reset form
+    setIsMessageModalOpen(false);
+    setBookingDetails({ date: "", time: "", reason: "" });
+    setMessage("");
   };
 
-  // Handle form input changes
-  const handleChange = (e) => {
+  // Handle booking form input changes
+  const handleBookingChange = (e) => {
     const { name, value } = e.target;
-    setBookingDetails((prevDetails) => ({
-      ...prevDetails,
-      [name]: value,
-    }));
+    setBookingDetails((prevDetails) => ({ ...prevDetails, [name]: value }));
   };
 
-  // Handle form submission (booking)
-  const handleSubmit = (e) => {
+  // Handle booking submission
+  const handleBookingSubmit = (e) => {
     e.preventDefault();
-    console.log("Booking Details:", bookingDetails);
-    // You can integrate API calls here to save the booking
+    const session = { ...bookingDetails, mentor: selectedMentor };
+    setSavedSessions((prevSessions) => [...prevSessions, session]);
 
-    // Close the modal after submitting
-    setIsModalOpen(false);
-    setBookingDetails({ date: "", time: "", reason: "" }); // Reset form
+    // Notify the user
+    alert(`Session successfully booked with ${selectedMentor.name}!`);
+    handleCloseModal();
+  };
+
+  // Handle sending a message
+  const handleSendMessage = (e) => {
+    e.preventDefault();
+    console.log(`Message to ${selectedMentor.name}: ${message}`);
+
+    // Notify the user
+    alert(`Message successfully sent to ${selectedMentor.name}`);
+    handleCloseModal();
   };
 
   return (
@@ -76,7 +90,10 @@ const FindMentors = () => {
 
             {/* Action Buttons */}
             <div className="mt-4 flex items-center justify-between">
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+              <button
+                onClick={() => handleMessageMentor(mentor)}
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300"
+              >
                 <MessageCircle className="mr-2" size={18} />
                 Message
               </button>
@@ -97,7 +114,7 @@ const FindMentors = () => {
         <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Book a Session with {selectedMentor?.name}</h3>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleBookingSubmit}>
               {/* Date */}
               <div className="mb-4">
                 <label htmlFor="date" className="block text-gray-700">Date</label>
@@ -106,7 +123,7 @@ const FindMentors = () => {
                   id="date"
                   name="date"
                   value={bookingDetails.date}
-                  onChange={handleChange}
+                  onChange={handleBookingChange}
                   className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
                   required
                 />
@@ -120,7 +137,7 @@ const FindMentors = () => {
                   id="time"
                   name="time"
                   value={bookingDetails.time}
-                  onChange={handleChange}
+                  onChange={handleBookingChange}
                   className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
                   required
                 />
@@ -133,7 +150,7 @@ const FindMentors = () => {
                   id="reason"
                   name="reason"
                   value={bookingDetails.reason}
-                  onChange={handleChange}
+                  onChange={handleBookingChange}
                   rows="3"
                   className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
                   required
@@ -152,6 +169,45 @@ const FindMentors = () => {
             </form>
 
             {/* Close Button */}
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Modal for Messaging */}
+      {isMessageModalOpen && (
+        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">Message {selectedMentor?.name}</h3>
+            <form onSubmit={handleSendMessage}>
+              <div className="mb-4">
+                <label htmlFor="message" className="block text-gray-700">Your Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  rows="3"
+                  className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  required
+                />
+              </div>
+
+              <div className="flex justify-end">
+                <button
+                  type="submit"
+                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+
             <button
               onClick={handleCloseModal}
               className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
